@@ -1,5 +1,6 @@
 import {useCartStore} from "@/store/useCartStore";
 import { FaRegTrashAlt } from "react-icons/fa";
+import { PiWarningCircleLight } from "react-icons/pi";
 
 const Cart = () => {
   const {cart, clearCart,removeFromCart} = useCartStore((state) => ({
@@ -20,7 +21,14 @@ const Cart = () => {
             </div>
           </div>
           <div className="flex flex-col gap-5 mt-10">
+                
               {
+                cart.length == 0 ? <div className="w-full h-full py-[100px] flex items-center justify-center">
+                <div className=" w-full h-full flex items-center text-8xl justify-center text-gray-400 flex-col ">
+                  <PiWarningCircleLight />
+                  <span className="text-4xl mt-4 text-gray-400">Basket is empty</span>
+                </div>
+              </div> : 
                 cart.map((item) => (
                   <div key={item.id} className="border border-gray-500/50 p-5 flex justify-between rounded-md gap-10">
                     <div className="w-[8%] h-[100px]">

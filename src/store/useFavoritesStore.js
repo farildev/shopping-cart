@@ -1,6 +1,8 @@
 import { create } from "zustand";
 
-const useFavoriteStore = create((set) => ({
+export const useFavoriteStore = create((set) => ({
     favorites : [],
-    addToFavorites : (favorite) => set((state) => ({favorites : [...state.favorites, favorite]}))
+    addToFavorites : (product) => set((state) => ({favorites : [...state.favorites, product]})),
+    removeFromFavorites : (productId) => set((state) => ({cart: state.favorites.filter(product => product.id !== productId)})),
+    clearFavorites : () => set({favorites : []})
 }))

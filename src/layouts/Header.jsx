@@ -12,7 +12,7 @@ const Header = () => {
         <nav className="">
           <ul className="text-2xl flex items-center gap-5">
             <NavLink to={'/cart'}><MdOutlineShoppingCart /></NavLink>
-            <NavLink><FaRegHeart /></NavLink>
+            <NavLink to={'/favorites'}><FaRegHeart /></NavLink>
           </ul>
         </nav>
       </div>

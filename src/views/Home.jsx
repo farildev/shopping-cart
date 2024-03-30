@@ -19,7 +19,7 @@ const Home = () => {
               Total Products : <span className="font-semibold text-yellow-500">{products.length}</span>
             </div>
           </div>
-          <div className="grid grid-cols-4 gap-5 mt-10">
+          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 mt-10">
             {
               products.map((product) => (
                 <ProductCart key={product.id} product={product} />
