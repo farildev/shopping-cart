@@ -20,7 +20,7 @@ const ProductCart = ({product}) => {
   const handleCart = () => {
     addToCart(product)
     toast.success('🧺 Product added!', {
-      position: "top-right",
+      position: "top-left",
       autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -35,8 +35,8 @@ const ProductCart = ({product}) => {
   }
   return (
     <div className="rounded-lg border overflow-hidden border-gray-500/50">
-                  <div className="h-[250px] w-full p-5 rounded-lg overflow-hidden">
-                    <img className="h-full w-full object-cover" src={product.image} alt="Product image" />
+                  <div className="h-[350px] w-full p-5 rounded-lg overflow-hidden">
+                    <img className="h-full w-full object-cover rounded-md" src={product.image} alt="Product image" />
                   </div>
                   <div className="flex flex-col p-5">
                     <h1 className="mt-5 text-xl font-medium">{product.title.substr(0,25)}</h1>
@@ -44,7 +44,7 @@ const ProductCart = ({product}) => {
                     <div className="flex items-center justify-between mt-7">
                       <span className="text-4xl font-semibold">{product.price.toFixed(0)} $</span>
                       <div className="flex items-center gap-2">
-                        <button onClick={handleFavorite} className="p-2 rounded-md text-2xl text-red-500 border border-red-500">
+                        <button onClick={() => handleFavorite(product)} className="p-2 rounded-md text-2xl text-red-500 border border-red-500 hover:bg-red-500 hover:text-white transition-all duration-200 ">
                           {favoriteToggle ? <IoHeart /> : <IoMdHeartEmpty />}
                         </button>
                         <button onClick={handleCart} className="border border-yellow-500 p-2 rounded-md text-2xl text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all duration-100">
