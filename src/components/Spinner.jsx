@@ -1,7 +1,7 @@
 import "@/assets/styles/spinner.css";
 const Spinner = () => {
   return (
-    <span className="loader"></span>
+    <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
   )
 }
 
